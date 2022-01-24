@@ -119,6 +119,7 @@ class Goopy extends GameObject {
   }
 
   takeDamage() {
+    updateScore();
     this.hp -= 1;
   }
 

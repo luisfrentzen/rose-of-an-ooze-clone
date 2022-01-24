@@ -190,8 +190,11 @@ var isFrozen;
 
 var showHitboxes;
 
+var hearts;
+
 function toggleTutorialModal() {
   let t = document.getElementById("tutorial-container");
+  console.log(t);
   t.style.display = t.style.display == "flex" ? "none" : "flex";
 }
 
@@ -398,12 +401,35 @@ function initialize() {
 }
 
 function main() {
+  hearts = document.getElementsByClassName("love-hp");
+
   initialize();
+}
+
+var score = 0;
+
+function updateScore() {
+  let t = document.getElementById("highscore-text");
+
+  score += 2;
+  let val = t.innerText.split(" ");
+  val[1] = score.toString().padStart(8, "0");
+
+  t.innerText = val.join(" ");
 }
 
 function killGame() {
   initialize();
   ctx.clearFrame;
+
+  let b = document.getElementById("play-button");
+  b.disabled = false;
+
+  b = document.getElementById("tutor-button");
+  b.disabled = false;
+
+  b = document.getElementById("pause-button");
+  b.disabled = true;
 
   isStarted = false;
 
@@ -446,8 +472,18 @@ function pauseGame() {
 }
 
 function playGame() {
+  for (h of hearts) {
+    h.style.display = "block";
+  }
+
   let b = document.getElementById("play-button");
   b.disabled = true;
+
+  b = document.getElementById("tutor-button");
+  b.disabled = true;
+
+  b = document.getElementById("pause-button");
+  b.disabled = false;
 
   isStarted = true;
 

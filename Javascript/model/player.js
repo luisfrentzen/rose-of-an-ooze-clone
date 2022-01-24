@@ -382,6 +382,8 @@ class Player extends GameObject {
   }
 
   takeDamage() {
+    hearts[this.hp].style.display = "none";
+
     this.playerHitSound[0][0].play();
     this.playerCrackSound[0][0].play();
     this.takeDamageRender.push(

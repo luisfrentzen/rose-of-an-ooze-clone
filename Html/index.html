@@ -1107,35 +1107,43 @@
     </div>
     <div id="game">
         <div id="canv-container">
+            <div id="info-bar">
+                <div class="info-item" id="hp-bar">
+                    <p>HEALTH</p>
+                    <img class="love-hp" id="hp-1" src="../Textures/Web/1024px-Pixel_heart_red.svg.png" alt="">
+                    <img class="love-hp" id="hp-2" src="../Textures/Web/1024px-Pixel_heart_red.svg.png" alt="">
+                    <img class="love-hp" id="hp-3" src="../Textures/Web/1024px-Pixel_heart_red.svg.png" alt="">
+                </div>
+                <div class="info-item" id="highscore-bar">
+                    <p id="highscore-text">SCORE 00000000</p>
+                </div>
+            </div>
+            <canvas id="canv"></canvas>
             <div id="tutorial-container">
                 <div id="tutorial-card">
                     <div id="title">
                         <h1>TUTORIAL</h1>
                     </div>
                     <div id="instructions">
-                        Use <button>Z</button> to <b>Jump</b>.
-                        Use <button>X</button> to <b>Shoot</b>.
-                        Use <button>C</button> to <b>Lock</b> position and <button>ARROW</button> keys to <b>Aim</b>.
-                        Use <button>SHIFT</button> to <b>Evade</b> and <b>Dash</b>.
+                        USE <button class="tutor-buttons">Z</button> TO <b>JUMP</b>.
+                        USE <button class="tutor-buttons">X</button> TO <b>SHOOT</b>.
+                        USE <button class="tutor-buttons">C</button> TO <b>LOCK</b> POSITION AND <button class="tutor-buttons">ARROW</button> keys to <b>Aim</b>.
+                        USE <button class="tutor-buttons">SHIFT</button> TO <b>EVADE</b> AND <b>DASH</b>.
                     </div>
 
                 </div>
             </div>
-            <div id="info-bar">
-                <p>HEALTH</p>
-            </div>
-            <canvas id="canv"></canvas>
         </div>
         <div id="controls">
             <button class="menu-button" id="play-button" onclick="playGame()">PLAY</button>
-            <button class="menu-button" id="pause-button" onclick="pauseGame()">PAUSE</button>
+            <button class="menu-button" id="pause-button" onclick="pauseGame()" disabled>PAUSE</button>
             <button class="menu-button" id="tutor-button" onclick="toggleTutorialModal()">TUTORIAL</button>
         </div>
     </div>
     <div class="texture-overlay" id="layer-1"></div>
     <div class="texture-overlay" id="layer-2"></div>
     <div class="texture-overlay" id="layer-3"></div>
-    <img class="background-stickers" id="cuphead" src="../Textures/Cuphoof.png" alt="">
-    <img class="background-stickers" id="mugman" src="../Textures/Mugman_results.png" alt="">
+    <img class="background-stickers" id="cuphead" src="../Textures/Web/Cuphoof.png" alt="">
+    <img class="background-stickers" id="mugman" src="../Textures/Web/Mugman_results.png" alt="">
 </body>
 </html>

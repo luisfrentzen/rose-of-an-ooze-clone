@@ -99,7 +99,7 @@ class Announcer extends GameObject {
       if (bgMusic.volume > 0) {
         let v = bgMusic.volume;
 
-        v -= 0.01;
+        v -= 0.015;
         if (v < 0) {
           v = 0;
           this.frameQueue.push(...this.iris[0].reverse());

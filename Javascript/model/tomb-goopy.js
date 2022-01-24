@@ -178,6 +178,7 @@ class TombGoopy extends GameObject {
   }
 
   takeDamage() {
+    updateScore();
     this.hp -= 1;
 
     if (this.hp <= 0 && !this.isDead) {

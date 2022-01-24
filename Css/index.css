@@ -50,19 +50,19 @@ body {
 
 #layer-1 {
   z-index: 3;
-  background: transparent url("../Textures/layer-1.png");
+  background: transparent url("../Textures/Web/layer-1.png");
   mix-blend-mode: overlay;
 }
 
 #layer-2 {
   z-index: 2;
-  background: transparent url("../Textures/layer-2.png");
+  background: transparent url("../Textures/Web/layer-2.png");
   mix-blend-mode: multiply;
 }
 
 #layer-3 {
   z-index: 1;
-  background: transparent url("../Textures/layer-3.png");
+  background: transparent url("../Textures/Web/layer-3.png");
   mix-blend-mode: overlay;
   opacity: 0.5;
 }
@@ -74,8 +74,8 @@ body {
   justify-content: center;
   align-items: center;
 
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 #controls {
@@ -94,20 +94,43 @@ body {
   align-items: center;
 
   background-color: black;
-  padding: 1.6rem;
+  padding: 0rem 1.6rem 1.2rem 1.6rem;
+}
+
+.love-hp {
+  height: 0.6rem;
+  margin: 0 0.2rem;
+
+  display: none;
+}
+
+#title > h1 {
+  font-family: "Press Start 2p";
+}
+
+.info-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hp-bar > p {
+  margin-right: 1rem;
+}
+
+p {
+  font-family: "Press Start 2p";
 }
 
 #info-bar {
   width: 100%;
+  height: 2rem;
 
   font-size: 0.5rem;
   color: white;
   display: flex;
   align-items: center;
-}
-
-#info-bar > p {
-  font-family: "Press Start 2p";
+  justify-content: space-between;
 }
 
 #canv {
@@ -134,7 +157,9 @@ body {
   box-shadow: 0 0.2em gray;
   width: 50%;
   height: 50%;
-  padding: 2rem;
+  padding: 3rem;
+
+  z-index: 11;
 }
 
 #title {
@@ -160,36 +185,47 @@ button {
   text-align: center;
   display: inline-block;
   font-weight: bolder;
-  /* padding: 10px 10px 10px 10px; */
   background-color: lightgray;
   font-size: 0.5rem;
   text-shadow: -1px -1px black, 1px 1px white;
-  color: gray;
+  color: rgb(179, 179, 179);
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   -o-border-radius: 7px;
   border-radius: 7px;
   box-shadow: 0 0.2em gray;
   cursor: pointer;
+
+  letter-spacing: 1px;
 }
 
 button:active {
   box-shadow: none;
   position: relative;
-  background-color: #6b6b6b;
+  background-color: #616161;
+  color: #616161;
+
+  text-shadow: -1px -1px black, 1px 1px rgb(223, 223, 223);
   top: 0.2rem;
 }
 
 button:disabled {
   box-shadow: none;
   position: relative;
-  background-color: #7a7a7a;
+  background-color: #616161;
+  color: #616161;
+  text-shadow: -1px -1px black, 1px 1px rgb(223, 223, 223);
 
   top: 0.1rem;
 }
 
 .menu-button {
-  width: 5rem;
+  width: 6rem;
   margin: 0 0.75rem;
   border-radius: 5rem;
+}
+
+.tutor-buttons {
+  padding: 0.5rem;
+  height: 1.5rem;
 }
