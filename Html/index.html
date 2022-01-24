@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fusshead</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/index.css">
+</head>
+<script defer src="../Javascript/model/game-object.js"></script>
+<script defer src="../Javascript/model/player.js"></script>
+<script defer src="../Javascript/model/bullet.js"></script>
+<script defer src="../Javascript/model/environments.js"></script>
+<script defer src="../Javascript/model/goopy.js"></script>
+<script defer src="../Javascript/model/screenfx.js"></script>
+<script defer src="../Javascript/model/tomb-goopy.js"></script>
+<script defer src="../Javascript/model/announcer.js"></script>
+<script defer src="../Javascript/main.js"></script>
+<body>
+    <div class="assets cuphead">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Idle/cuphead_idle_0001.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Idle/cuphead_idle_0001.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Idle/cuphead_idle_0001.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0001.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0002.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0003.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0004.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0005.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0006.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0007.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0008.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0009.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0010.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0011.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0012.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0013.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0014.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0015.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0016.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0017.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0018.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0019.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0020.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0021.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0022.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0023.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0024.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0025.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0026.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0027.png" alt="">
+        <img class="texture-cuphead-intro" src="../Textures/Cuphead/Intro/cuphead_intro_a_0028.png" alt="">
+
+        <img class="texture-cuphead-idle" src="../Textures/Cuphead/Idle/cuphead_idle_0001.png" alt="">
+        <img class="texture-cuphead-idle" src="../Textures/Cuphead/Idle/cuphead_idle_0002.png" alt="">
+        <img class="texture-cuphead-idle" src="../Textures/Cuphead/Idle/cuphead_idle_0003.png" alt="">
+        <img class="texture-cuphead-idle" src="../Textures/Cuphead/Idle/cuphead_idle_0004.png" alt="">
+        <img class="texture-cuphead-idle" src="../Textures/Cuphead/Idle/cuphead_idle_0005.png" alt="">
+        <img class="texture-cuphead-idle" src="../Textures/Cuphead/Idle/cuphead_idle_0006.png" alt="">
+        <img class="texture-cuphead-idle" src="../Textures/Cuphead/Idle/cuphead_idle_0007.png" alt="">
+        <img class="texture-cuphead-idle" src="../Textures/Cuphead/Idle/cuphead_idle_0008.png" alt="">
+        <img class="texture-cuphead-idle" src="../Textures/Cuphead/Idle/cuphead_idle_0009.png" alt="">
+        <img class="texture-cuphead-idle" src="../Textures/Cuphead/Idle/cuphead_idle_0010.png" alt="">
+        <img class="texture-cuphead-idle" src="../Textures/Cuphead/Idle/cuphead_idle_0011.png" alt="">
+
+        <img class="texture-cuphead-run" src="../Textures/Cuphead/Run/Normal/cuphead_run_0001.png" alt="">
+        <img class="texture-cuphead-run" src="../Textures/Cuphead/Run/Normal/cuphead_run_0002.png" alt="">
+        <img class="texture-cuphead-run" src="../Textures/Cuphead/Run/Normal/cuphead_run_0003.png" alt="">
+        <img class="texture-cuphead-run" src="../Textures/Cuphead/Run/Normal/cuphead_run_0004.png" alt="">
+        <img class="texture-cuphead-run" src="../Textures/Cuphead/Run/Normal/cuphead_run_0005.png" alt="">
+        <img class="texture-cuphead-run" src="../Textures/Cuphead/Run/Normal/cuphead_run_0006.png" alt="">
+        <img class="texture-cuphead-run" src="../Textures/Cuphead/Run/Normal/cuphead_run_0007.png" alt="">
+        <img class="texture-cuphead-run" src="../Textures/Cuphead/Run/Normal/cuphead_run_0008.png" alt="">
+        <img class="texture-cuphead-run" src="../Textures/Cuphead/Run/Normal/cuphead_run_0009.png" alt="">
+        <img class="texture-cuphead-run" src="../Textures/Cuphead/Run/Normal/cuphead_run_0010.png" alt="">
+        <img class="texture-cuphead-run" src="../Textures/Cuphead/Run/Normal/cuphead_run_0011.png" alt="">
+        <img class="texture-cuphead-run" src="../Textures/Cuphead/Run/Normal/cuphead_run_0012.png" alt="">
+        <img class="texture-cuphead-run" src="../Textures/Cuphead/Run/Normal/cuphead_run_0013.png" alt="">
+        <img class="texture-cuphead-run" src="../Textures/Cuphead/Run/Normal/cuphead_run_0014.png" alt="">
+        <img class="texture-cuphead-run" src="../Textures/Cuphead/Run/Normal/cuphead_run_0015.png" alt="">
+        <img class="texture-cuphead-run" src="../Textures/Cuphead/Run/Normal/cuphead_run_0016.png" alt="">
+
+        <img class="texture-cuphead-duck-idle" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_idle_0001.png" alt="">
+        <img class="texture-cuphead-duck-idle" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_idle_0002.png" alt="">
+        <img class="texture-cuphead-duck-idle" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_idle_0003.png" alt="">
+        <img class="texture-cuphead-duck-idle" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_idle_0004.png" alt="">
+        <img class="texture-cuphead-duck-idle" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_idle_0005.png" alt="">
+        <img class="texture-cuphead-duck-idle" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_idle_0006.png" alt="">
+        <img class="texture-cuphead-duck-idle" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_idle_0007.png" alt="">
+        <img class="texture-cuphead-duck-idle" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_idle_0008.png" alt="">
+
+        <img class="texture-cuphead-ducking" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_0001.png" alt="">
+        <img class="texture-cuphead-ducking" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_0002.png" alt="">
+        <img class="texture-cuphead-ducking" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_0003.png" alt="">
+        <img class="texture-cuphead-ducking" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_0004.png" alt="">
+        <img class="texture-cuphead-ducking" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_0005.png" alt="">
+        <img class="texture-cuphead-ducking" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_0006.png" alt="">
+        <img class="texture-cuphead-ducking" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_0007.png" alt="">
+
+        <img class="texture-cuphead-duck-stand" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_stand_0001.png" alt="">
+        <img class="texture-cuphead-duck-stand" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_stand_0002.png" alt="">
+        <img class="texture-cuphead-duck-stand" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_stand_0003.png" alt="">
+
+        <img class="texture-cuphead-jumping" src="../Textures/Cuphead/Jump/Cuphead/cuphead_jump_0001.png" alt="">
+        <img class="texture-cuphead-jumping" src="../Textures/Cuphead/Jump/Cuphead/cuphead_jump_0002.png" alt="">
+        <img class="texture-cuphead-jumping" src="../Textures/Cuphead/Jump/Cuphead/cuphead_jump_0003.png" alt="">
+        <img class="texture-cuphead-jumping" src="../Textures/Cuphead/Jump/Cuphead/cuphead_jump_0004.png" alt="">
+        <img class="texture-cuphead-jumping" src="../Textures/Cuphead/Jump/Cuphead/cuphead_jump_0005.png" alt="">
+        <img class="texture-cuphead-jumping" src="../Textures/Cuphead/Jump/Cuphead/cuphead_jump_0006.png" alt="">
+        <img class="texture-cuphead-jumping" src="../Textures/Cuphead/Jump/Cuphead/cuphead_jump_0007.png" alt="">
+        <img class="texture-cuphead-jumping" src="../Textures/Cuphead/Jump/Cuphead/cuphead_jump_0008.png" alt="">
+
+        <img class="texture-cuphead-hit-air" src="../Textures/Cuphead/Hit/Air/cuphead_hit_air_0001.png" alt="">
+        <img class="texture-cuphead-hit-air" src="../Textures/Cuphead/Hit/Air/cuphead_hit_air_0002.png" alt="">
+        <img class="texture-cuphead-hit-air" src="../Textures/Cuphead/Hit/Air/cuphead_hit_air_0003.png" alt="">
+        <img class="texture-cuphead-hit-air" src="../Textures/Cuphead/Hit/Air/cuphead_hit_air_0004.png" alt="">
+        <img class="texture-cuphead-hit-air" src="../Textures/Cuphead/Hit/Air/cuphead_hit_air_0005.png" alt="">
+        <img class="texture-cuphead-hit-air" src="../Textures/Cuphead/Hit/Air/cuphead_hit_air_0006.png" alt="">
+
+        <img class="texture-cuphead-hit" src="../Textures/Cuphead/Hit/Ground/cuphead_hit_0001.png" alt="">
+        <img class="texture-cuphead-hit" src="../Textures/Cuphead/Hit/Ground/cuphead_hit_0002.png" alt="">
+        <img class="texture-cuphead-hit" src="../Textures/Cuphead/Hit/Ground/cuphead_hit_0003.png" alt="">
+        <img class="texture-cuphead-hit" src="../Textures/Cuphead/Hit/Ground/cuphead_hit_0004.png" alt="">
+        <img class="texture-cuphead-hit" src="../Textures/Cuphead/Hit/Ground/cuphead_hit_0005.png" alt="">
+        <img class="texture-cuphead-hit" src="../Textures/Cuphead/Hit/Ground/cuphead_hit_0006.png" alt="">
+
+        <img class="texture-cuphead-parry" src="../Textures/Cuphead/Parry/Hand/cuphead_parry_0001.png" alt="">
+        <img class="texture-cuphead-parry" src="../Textures/Cuphead/Parry/Hand/cuphead_parry_0002.png" alt="">
+        <img class="texture-cuphead-parry" src="../Textures/Cuphead/Parry/Hand/cuphead_parry_0003.png" alt="">
+        <img class="texture-cuphead-parry" src="../Textures/Cuphead/Parry/Hand/cuphead_parry_0004.png" alt="">
+        <img class="texture-cuphead-parry" src="../Textures/Cuphead/Parry/Hand/cuphead_parry_0005.png" alt="">
+        <img class="texture-cuphead-parry" src="../Textures/Cuphead/Parry/Hand/cuphead_parry_0006.png" alt="">
+        <img class="texture-cuphead-parry" src="../Textures/Cuphead/Parry/Hand/cuphead_parry_0007.png" alt="">
+        <img class="texture-cuphead-parry" src="../Textures/Cuphead/Parry/Hand/cuphead_parry_0008.png" alt="">
+        
+        <img class="texture-cuphead-dash" src="../Textures/Cuphead/Dash/Ground/0.png" alt="">
+        <img class="texture-cuphead-dash" src="../Textures/Cuphead/Dash/Ground/1.png" alt="">
+        <img class="texture-cuphead-dash" src="../Textures/Cuphead/Dash/Ground/cuphead_dash_0001.png" alt="">
+        <img class="texture-cuphead-dash" src="../Textures/Cuphead/Dash/Ground/cuphead_dash_0002.png" alt="">
+        <img class="texture-cuphead-dash" src="../Textures/Cuphead/Dash/Ground/cuphead_dash_0003.png" alt="">
+        <img class="texture-cuphead-dash" src="../Textures/Cuphead/Dash/Ground/cuphead_dash_0004.png" alt="">
+        <img class="texture-cuphead-dash" src="../Textures/Cuphead/Dash/Ground/cuphead_dash_0005.png" alt="">
+        <img class="texture-cuphead-dash" src="../Textures/Cuphead/Dash/Ground/cuphead_dash_0006.png" alt="">
+        <img class="texture-cuphead-dash" src="../Textures/Cuphead/Dash/Ground/1.png" alt="">
+        <img class="texture-cuphead-dash" src="../Textures/Cuphead/Dash/Ground/0.png" alt="">
+        
+        <img class="texture-cuphead-dash-air" src="../Textures/Cuphead/Dash/Air/0.png" alt="">
+        <img class="texture-cuphead-dash-air" src="../Textures/Cuphead/Dash/Air/1.png" alt="">
+        <img class="texture-cuphead-dash-air" src="../Textures/Cuphead/Dash/Air/cuphead_dash_air_0001.png" alt="">
+        <img class="texture-cuphead-dash-air" src="../Textures/Cuphead/Dash/Air/cuphead_dash_air_0002.png" alt="">
+        <img class="texture-cuphead-dash-air" src="../Textures/Cuphead/Dash/Air/cuphead_dash_air_0003.png" alt="">
+        <img class="texture-cuphead-dash-air" src="../Textures/Cuphead/Dash/Air/cuphead_dash_air_0004.png" alt="">
+        <img class="texture-cuphead-dash-air" src="../Textures/Cuphead/Dash/Air/cuphead_dash_air_0005.png" alt="">
+        <img class="texture-cuphead-dash-air" src="../Textures/Cuphead/Dash/Air/cuphead_dash_air_0006.png" alt="">
+        <img class="texture-cuphead-dash-air" src="../Textures/Cuphead/Dash/Air/1.png" alt="">
+        <img class="texture-cuphead-dash-air" src="../Textures/Cuphead/Dash/Air/0.png" alt="">
+
+        <img class="texture-cuphead-shoot-ddown" src="../Textures/Cuphead/Shoot/Diagonal Down/cuphead_shoot_diagonal_down_0001.png" alt="">
+        <img class="texture-cuphead-shoot-ddown" src="../Textures/Cuphead/Shoot/Diagonal Down/cuphead_shoot_diagonal_down_0002.png" alt="">
+        <img class="texture-cuphead-shoot-ddown" src="../Textures/Cuphead/Shoot/Diagonal Down/cuphead_shoot_diagonal_down_0003.png" alt="">
+       
+        <img class="texture-cuphead-shoot-dup" src="../Textures/Cuphead/Shoot/Diagonal Up/cuphead_shoot_diagonal_up_0001.png" alt="">
+        <img class="texture-cuphead-shoot-dup" src="../Textures/Cuphead/Shoot/Diagonal Up/cuphead_shoot_diagonal_up_0002.png" alt="">
+        <img class="texture-cuphead-shoot-dup" src="../Textures/Cuphead/Shoot/Diagonal Up/cuphead_shoot_diagonal_up_0003.png" alt="">
+       
+        <img class="texture-cuphead-shoot-up" src="../Textures/Cuphead/Shoot/Up/cuphead_shoot_up_0001.png" alt="">
+        <img class="texture-cuphead-shoot-up" src="../Textures/Cuphead/Shoot/Up/cuphead_shoot_up_0002.png" alt="">
+        <img class="texture-cuphead-shoot-up" src="../Textures/Cuphead/Shoot/Up/cuphead_shoot_up_0003.png" alt="">
+       
+        <img class="texture-cuphead-shoot-straight" src="../Textures/Cuphead/Shoot/Straight/cuphead_shoot_straight_0001.png" alt="">
+        <img class="texture-cuphead-shoot-straight" src="../Textures/Cuphead/Shoot/Straight/cuphead_shoot_straight_0002.png" alt="">
+        <img class="texture-cuphead-shoot-straight" src="../Textures/Cuphead/Shoot/Straight/cuphead_shoot_straight_0003.png" alt="">
+       
+        <img class="texture-cuphead-run-shoot-dup" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diagonal_up_0001.png" alt="">
+        <img class="texture-cuphead-run-shoot-dup" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diagonal_up_0002.png" alt="">
+        <img class="texture-cuphead-run-shoot-dup" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diagonal_up_0003.png" alt="">
+        <img class="texture-cuphead-run-shoot-dup" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diagonal_up_0004.png" alt="">
+        <img class="texture-cuphead-run-shoot-dup" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diagonal_up_0005.png" alt="">
+        <img class="texture-cuphead-run-shoot-dup" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diagonal_up_0006.png" alt="">
+        <img class="texture-cuphead-run-shoot-dup" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diagonal_up_0007.png" alt="">
+        <img class="texture-cuphead-run-shoot-dup" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diagonal_up_0008.png" alt="">
+        <img class="texture-cuphead-run-shoot-dup" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diagonal_up_0009.png" alt="">
+        <img class="texture-cuphead-run-shoot-dup" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diagonal_up_0010.png" alt="">
+        <img class="texture-cuphead-run-shoot-dup" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diagonal_up_0011.png" alt="">
+        <img class="texture-cuphead-run-shoot-dup" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diagonal_up_0012.png" alt="">
+        <img class="texture-cuphead-run-shoot-dup" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diagonal_up_0013.png" alt="">
+        <img class="texture-cuphead-run-shoot-dup" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diagonal_up_0014.png" alt="">
+        <img class="texture-cuphead-run-shoot-dup" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diagonal_up_0015.png" alt="">
+        <img class="texture-cuphead-run-shoot-dup" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diagonal_up_0016.png" alt="">
+
+        <img class="texture-cuphead-run-shoot-dup-turnaround" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diag_up_turnaround_0001.png" alt="">
+        <img class="texture-cuphead-run-shoot-dup-turnaround" src="../Textures/Cuphead/Run/Shooting/Diagonal Up/cuphead_run_shoot_diag_up_turnaround_0002.png" alt="">
+        
+        <img class="texture-cuphead-run-shoot" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_0001.png" alt="">
+        <img class="texture-cuphead-run-shoot" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_0002.png" alt="">
+        <img class="texture-cuphead-run-shoot" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_0003.png" alt="">
+        <img class="texture-cuphead-run-shoot" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_0004.png" alt="">
+        <img class="texture-cuphead-run-shoot" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_0005.png" alt="">
+        <img class="texture-cuphead-run-shoot" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_0006.png" alt="">
+        <img class="texture-cuphead-run-shoot" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_0007.png" alt="">
+        <img class="texture-cuphead-run-shoot" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_0008.png" alt="">
+        <img class="texture-cuphead-run-shoot" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_0009.png" alt="">
+        <img class="texture-cuphead-run-shoot" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_0010.png" alt="">
+        <img class="texture-cuphead-run-shoot" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_0011.png" alt="">
+        <img class="texture-cuphead-run-shoot" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_0012.png" alt="">
+        <img class="texture-cuphead-run-shoot" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_0013.png" alt="">
+        <img class="texture-cuphead-run-shoot" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_0014.png" alt="">
+        <img class="texture-cuphead-run-shoot" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_0015.png" alt="">
+        <img class="texture-cuphead-run-shoot" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_0016.png" alt="">
+
+        <img class="texture-cuphead-run-shoot-turnaround" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_turnaround_0001.png" alt="">
+        <img class="texture-cuphead-run-shoot-turnaround" src="../Textures/Cuphead/Run/Shooting/Straight/cuphead_run_shoot_turnaround_0002.png" alt="">
+
+        <img class="texture-cuphead-shoot-duck" src="../Textures/Cuphead/Duck/Shoot/cuphead_duck_shoot_0001.png" alt="">
+        <img class="texture-cuphead-shoot-duck" src="../Textures/Cuphead/Duck/Shoot/cuphead_duck_shoot_0002.png" alt="">
+        <img class="texture-cuphead-shoot-duck" src="../Textures/Cuphead/Duck/Shoot/cuphead_duck_shoot_0003.png" alt="">
+
+        <img class="texture-cuphead-turn-duck" src="../Textures/Cuphead/Duck/Idle/cuphead_duck_turn_0001_mirrored.png" alt="">
+
+        <img class="texture-cuphead-turn-around" src="../Textures/Cuphead/Run/Normal/cuphead_run_turnaround_0001.png" alt="">
+        <img class="texture-cuphead-turn-around" src="../Textures/Cuphead/Run/Normal/cuphead_run_turnaround_0002.png" alt="">
+    </div>
+    <div class="assets bullet">
+        <img class="texture-bullet-spawn" src="../Textures/Bullet/Spawning/bullet_spawn_0001.png" alt="">
+        <img class="texture-bullet-spawn" src="../Textures/Bullet/Spawning/bullet_spawn_0002.png" alt="">
+        <img class="texture-bullet-spawn" src="../Textures/Bullet/Spawning/bullet_spawn_0003.png" alt="">
+
+        <img class="texture-bullet-loop" src="../Textures/Bullet/Loop/bullet_loop_0003.png" alt="">
+        <img class="texture-bullet-loop" src="../Textures/Bullet/Loop/bullet_loop_0004.png" alt="">
+        <img class="texture-bullet-loop" src="../Textures/Bullet/Loop/bullet_loop_0005.png" alt="">
+        <img class="texture-bullet-loop" src="../Textures/Bullet/Loop/bullet_loop_0006.png" alt="">
+        <img class="texture-bullet-loop" src="../Textures/Bullet/Loop/bullet_loop_0007.png" alt="">
+        <img class="texture-bullet-loop" src="../Textures/Bullet/Loop/bullet_loop_0008.png" alt="">
+
+        <img class="texture-bullet-dies" src="../Textures/Bullet/Dies/bullet_dies_0001.png" alt="">
+        <img class="texture-bullet-dies" src="../Textures/Bullet/Dies/bullet_dies_0002.png" alt="">
+        <img class="texture-bullet-dies" src="../Textures/Bullet/Dies/bullet_dies_0003.png" alt="">
+        <img class="texture-bullet-dies" src="../Textures/Bullet/Dies/bullet_dies_0004.png" alt="">
+        <img class="texture-bullet-dies" src="../Textures/Bullet/Dies/bullet_dies_0005.png" alt="">
+        <img class="texture-bullet-dies" src="../Textures/Bullet/Dies/bullet_dies_0006.png" alt="">
+    </div>
+    <div class="assets envs">
+        <img class="environment-background" src="../Textures/Background/slime_bg_bg_far_forest.png" alt="">
+        <img class="environment-background" src="../Textures/Background/slime_bg_bg_evergreens.png" alt="">
+        <img class="environment-background" src="../Textures/Background/slime_bg_bg_forest.png" alt="">
+
+        <img class="environment-middleground" src="../Textures/Background/slime_bg_mg_main_ground.png" alt="">
+        <img class="environment-middleground" src="../Textures/Background/slime_bg_mg_beam.png" alt="">
+
+        <img class="environment-foreground" src="../Textures/Background/slime_bg_fg_leaves_1.png" alt="">
+        <img class="environment-foreground" src="../Textures/Background/slime_bg_fg_leaves_2.png" alt="">
+        <img class="environment-foreground" src="../Textures/Background/slime_bg_fg_left_branch.png" alt="">
+        <img class="environment-foreground" src="../Textures/Background/slime_bg_fg_right_branches.png" alt="">
+        <img class="environment-foreground" src="../Textures/Background/slime_bg_fg_mushrooms_left.png" alt="">
+        <img class="environment-foreground" src="../Textures/Background/slime_bg_fg_mushrooms_right.png" alt="">
+        <img class="environment-foreground" src="../Textures/Background/slime_bg_fg_beam.png" alt="">
+
+        <!-- <img class="environment-background-stream" src="../Textures/Background/slime_bg_stream_0001.png" alt="">
+        <img class="environment-background-stream" src="../Textures/Background/slime_bg_stream_0002.png" alt="">
+        <img class="environment-background-stream" src="../Textures/Background/slime_bg_stream_0003.png" alt="">
+        <img class="environment-background-stream" src="../Textures/Background/slime_bg_stream_0004.png" alt="">
+        <img class="environment-background-stream" src="../Textures/Background/slime_bg_stream_0005.png" alt="">
+        <img class="environment-background-stream" src="../Textures/Background/slime_bg_stream_0006.png" alt="">
+        <img class="environment-background-stream" src="../Textures/Background/slime_bg_stream_0007.png" alt="">
+        <img class="environment-background-stream" src="../Textures/Background/slime_bg_stream_0008.png" alt="">
+        <img class="environment-background-stream" src="../Textures/Background/slime_bg_stream_0009.png" alt="">
+        <img class="environment-background-stream" src="../Textures/Background/slime_bg_stream_0010.png" alt=""> -->
+    </div>
+    <div class="assets goopy">
+        <div class="phase-1">
+            <img class="texture-goopy-phase1-down-turn" src="../Textures/Goopy/Phase 1/Air Down Turn/slime_air_down_turn_0001.png" alt="">
+            <img class="texture-goopy-phase1-down-turn" src="../Textures/Goopy/Phase 1/Air Down Turn/slime_air_down_turn_0002.png" alt="">
+            <img class="texture-goopy-phase1-down-turn" src="../Textures/Goopy/Phase 1/Air Down Turn/slime_air_down_turn_0003.png" alt="">
+
+            <img class="texture-goopy-phase1-down" src="../Textures/Goopy/Phase 1/Air Down/slime_air_down_0001.png" alt="">
+            <img class="texture-goopy-phase1-down" src="../Textures/Goopy/Phase 1/Air Down/slime_air_down_0002.png" alt="">
+            <img class="texture-goopy-phase1-down" src="../Textures/Goopy/Phase 1/Air Down/slime_air_down_0003.png" alt="">
+
+            <img class="texture-goopy-phase1-up-turn" src="../Textures/Goopy/Phase 1/Air Up Turn/slime_air_up_turn_0001.png" alt="">
+            <img class="texture-goopy-phase1-up-turn" src="../Textures/Goopy/Phase 1/Air Up Turn/slime_air_up_turn_0002.png" alt="">
+            <img class="texture-goopy-phase1-up-turn" src="../Textures/Goopy/Phase 1/Air Up Turn/slime_air_up_turn_0003.png" alt="">
+
+            <img class="texture-goopy-phase1-up" src="../Textures/Goopy/Phase 1/Air Up/slime_air_up_0001.png" alt="">
+            <img class="texture-goopy-phase1-up" src="../Textures/Goopy/Phase 1/Air Up/slime_air_up_0002.png" alt="">
+            <img class="texture-goopy-phase1-up" src="../Textures/Goopy/Phase 1/Air Up/slime_air_up_0003.png" alt="">
+
+            <img class="texture-goopy-phase1-jump" src="../Textures/Goopy/Phase 1/Jump/slime_jump_0001.png" alt="">
+            <img class="texture-goopy-phase1-jump" src="../Textures/Goopy/Phase 1/Jump/slime_jump_0002.png" alt="">
+            <img class="texture-goopy-phase1-jump" src="../Textures/Goopy/Phase 1/Jump/slime_jump_0003.png" alt="">
+            <img class="texture-goopy-phase1-jump" src="../Textures/Goopy/Phase 1/Jump/slime_jump_0004.png" alt="">
+            <img class="texture-goopy-phase1-jump" src="../Textures/Goopy/Phase 1/Jump/slime_jump_0005.png" alt="">
+            <img class="texture-goopy-phase1-jump" src="../Textures/Goopy/Phase 1/Jump/slime_jump_0006.png" alt="">
+            <img class="texture-goopy-phase1-jump" src="../Textures/Goopy/Phase 1/Jump/slime_jump_0007.png" alt="">
+            <img class="texture-goopy-phase1-jump" src="../Textures/Goopy/Phase 1/Jump/slime_jump_0008.png" alt="">
+            <img class="texture-goopy-phase1-jump" src="../Textures/Goopy/Phase 1/Jump/slime_jump_0009.png" alt="">
+
+            <img class="texture-goopy-phase1-updown-trans" src="../Textures/Goopy/Phase 1/Up Down Transition/slime_up_down_trans_0001.png" alt="">
+            <img class="texture-goopy-phase1-updown-trans" src="../Textures/Goopy/Phase 1/Up Down Transition/slime_up_down_trans_0002.png" alt="">
+            <img class="texture-goopy-phase1-updown-trans" src="../Textures/Goopy/Phase 1/Up Down Transition/slime_up_down_trans_0003.png" alt="">
+            <img class="texture-goopy-phase1-updown-trans" src="../Textures/Goopy/Phase 1/Up Down Transition/slime_up_down_trans_0004.png" alt="">
+            <img class="texture-goopy-phase1-updown-trans" src="../Textures/Goopy/Phase 1/Up Down Transition/slime_up_down_trans_0005.png" alt="">
+
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0001.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0001.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0002.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0003.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0003.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0004.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0004.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0003.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0003.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0002.png" alt="">
+
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0005.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0006.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0007.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0008.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0009.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0010.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0011.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0012.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0013.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0014.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0015.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0016.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0017.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0018.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0019.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0020.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0021.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0022.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0022.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0022.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0022.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0022.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0022.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0023.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0024.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0025.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0026.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0027.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0028.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0029.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0030.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0031.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0032.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0033.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0034.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0035.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0001.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0002.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0003.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0004.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0005.png" alt="">
+            <img class="texture-goopy-intro" src="../Textures/Goopy/Phase 1/Intro/slime_intro_0006.png" alt="">
+
+            <img class="texture-goopy-phase1-shadow" src="../Textures/Goopy/Phase 1/Shadow/slime_shadow_0001.png" alt="">
+            <img class="texture-goopy-phase1-shadow" src="../Textures/Goopy/Phase 1/Shadow/slime_shadow_0002.png" alt="">
+            <img class="texture-goopy-phase1-shadow" src="../Textures/Goopy/Phase 1/Shadow/slime_shadow_0003.png" alt="">
+            <img class="texture-goopy-phase1-shadow" src="../Textures/Goopy/Phase 1/Shadow/slime_shadow_0004.png" alt="">
+            <img class="texture-goopy-phase1-shadow" src="../Textures/Goopy/Phase 1/Shadow/slime_shadow_0005.png" alt="">
+        </div>
+        <div class="phase-2">
+
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0001.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0002.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0003.png" alt="">
+            
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0004.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0004.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0004.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0005.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0006.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0006.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0007.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0007.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0006.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0006.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0005.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0004.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0004.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0004.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0005.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0006.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0006.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0007.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0007.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0006.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0006.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0005.png" alt="">
+            
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0008.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0009.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0010.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0011.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0012.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0013.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0014.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0015.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0016.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0017.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0018.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0019.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0020.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0021.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0022.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0023.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0024.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0025.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0026.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0027.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0028.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0029.png" alt="">
+            
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0030.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0031.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0032.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0032.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0031.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0030.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0033.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0033.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0033.png" alt="">        
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0030.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0031.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0032.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0032.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0031.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0030.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0033.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0033.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0033.png" alt="">        
+    
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0034.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0035.png" alt="">
+       
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0037.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0037.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0037.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0037.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0037.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0037.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0037.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0036.png" alt="">
+            
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0038.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0039.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0040.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0041.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0042.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0043.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0044.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0045.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0046.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0047.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 1/Transition To Ph2/slime_morph_0048.png" alt="">
+        
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0001.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0002.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0003.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0004.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0005.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0005.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0004.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0003.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0002.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0001.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0001.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0002.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0003.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0004.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0005.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0005.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0005.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0004.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0003.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0002.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0001.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0001.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0002.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0003.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0004.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0005.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0005.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0005.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0004.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0003.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0002.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0001.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0001.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0002.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0003.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0004.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0005.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0005.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0004.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0003.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0002.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0001.png" alt="">
+            <img class="texture-goopy-phase2-intro" src="../Textures/Goopy/Phase 2/Idle/lg_slime_idle_0001.png" alt="">
+            
+            <img class="texture-goopy-phase2-down-turn" src="../Textures/Goopy/Phase 2/Air Down Turn/lg_slime_air_down_turn_0001.png" alt="">
+            <img class="texture-goopy-phase2-down-turn" src="../Textures/Goopy/Phase 2/Air Down Turn/lg_slime_air_down_turn_0002.png" alt="">
+            <img class="texture-goopy-phase2-down-turn" src="../Textures/Goopy/Phase 2/Air Down Turn/lg_slime_air_down_turn_0003.png" alt="">
+    
+            <img class="texture-goopy-phase2-down" src="../Textures/Goopy/Phase 2/Air Down/lg_slime_air_down_0001.png" alt="">
+            <img class="texture-goopy-phase2-down" src="../Textures/Goopy/Phase 2/Air Down/lg_slime_air_down_0002.png" alt="">
+            <img class="texture-goopy-phase2-down" src="../Textures/Goopy/Phase 2/Air Down/lg_slime_air_down_0003.png" alt="">
+            <img class="texture-goopy-phase2-down" src="../Textures/Goopy/Phase 2/Air Down/lg_slime_air_down_0004.png" alt="">
+            <img class="texture-goopy-phase2-down" src="../Textures/Goopy/Phase 2/Air Down/lg_slime_air_down_0005.png" alt="">
+    
+            <img class="texture-goopy-phase2-up-turn" src="../Textures/Goopy/Phase 2/Air Up Turn/lg_slime_air_up_turn_0001.png" alt="">
+            <img class="texture-goopy-phase2-up-turn" src="../Textures/Goopy/Phase 2/Air Up Turn/lg_slime_air_up_turn_0002.png" alt="">
+            <img class="texture-goopy-phase2-up-turn" src="../Textures/Goopy/Phase 2/Air Up Turn/lg_slime_air_up_turn_0003.png" alt="">
+    
+            <img class="texture-goopy-phase2-up" src="../Textures/Goopy/Phase 2/Air Up/lg_slime_air_up_0001.png" alt="">
+            <img class="texture-goopy-phase2-up" src="../Textures/Goopy/Phase 2/Air Up/lg_slime_air_up_0002.png" alt="">
+            <img class="texture-goopy-phase2-up" src="../Textures/Goopy/Phase 2/Air Up/lg_slime_air_up_0003.png" alt="">
+            <img class="texture-goopy-phase2-up" src="../Textures/Goopy/Phase 2/Air Up/lg_slime_air_up_0004.png" alt="">
+    
+            <img class="texture-goopy-phase2-jump" src="../Textures/Goopy/Phase 2/Jump/lg_slime_jump_0001.png" alt="">
+            <img class="texture-goopy-phase2-jump" src="../Textures/Goopy/Phase 2/Jump/lg_slime_jump_0002.png" alt="">
+            <img class="texture-goopy-phase2-jump" src="../Textures/Goopy/Phase 2/Jump/lg_slime_jump_0003.png" alt="">
+            <img class="texture-goopy-phase2-jump" src="../Textures/Goopy/Phase 2/Jump/lg_slime_jump_0004.png" alt="">
+            <img class="texture-goopy-phase2-jump" src="../Textures/Goopy/Phase 2/Jump/lg_slime_jump_0005.png" alt="">
+            <img class="texture-goopy-phase2-jump" src="../Textures/Goopy/Phase 2/Jump/lg_slime_jump_0006.png" alt="">
+            <img class="texture-goopy-phase2-jump" src="../Textures/Goopy/Phase 2/Jump/lg_slime_jump_0007.png" alt="">
+            <img class="texture-goopy-phase2-jump" src="../Textures/Goopy/Phase 2/Jump/lg_slime_jump_0008.png" alt="">
+    
+            <img class="texture-goopy-phase2-updown-trans" src="../Textures/Goopy/Phase 2/Up Down Transition/lg_slime_up_down_trans_0001.png" alt="">
+            <img class="texture-goopy-phase2-updown-trans" src="../Textures/Goopy/Phase 2/Up Down Transition/lg_slime_up_down_trans_0002.png" alt="">
+            <img class="texture-goopy-phase2-updown-trans" src="../Textures/Goopy/Phase 2/Up Down Transition/lg_slime_up_down_trans_0003.png" alt="">
+            <img class="texture-goopy-phase2-updown-trans" src="../Textures/Goopy/Phase 2/Up Down Transition/lg_slime_up_down_trans_0004.png" alt="">
+            <img class="texture-goopy-phase2-updown-trans" src="../Textures/Goopy/Phase 2/Up Down Transition/lg_slime_up_down_trans_0005.png" alt="">
+        
+            <img class="texture-goopy-phase2-shadow" src="../Textures/Goopy/Phase 2/Shadow/lg_slime_shadow_0001.png" alt="">
+            <img class="texture-goopy-phase2-shadow" src="../Textures/Goopy/Phase 2/Shadow/lg_slime_shadow_0002.png" alt="">
+            <img class="texture-goopy-phase2-shadow" src="../Textures/Goopy/Phase 2/Shadow/lg_slime_shadow_0003.png" alt="">
+            <img class="texture-goopy-phase2-shadow" src="../Textures/Goopy/Phase 2/Shadow/lg_slime_shadow_0004.png" alt="">
+            <img class="texture-goopy-phase2-shadow" src="../Textures/Goopy/Phase 2/Shadow/lg_slime_shadow_0005.png" alt="">
+            <img class="texture-goopy-phase2-shadow" src="../Textures/Goopy/Phase 2/Shadow/lg_slime_shadow_0006.png" alt="">
+            <img class="texture-goopy-phase2-shadow" src="../Textures/Goopy/Phase 2/Shadow/lg_slime_shadow_0007.png" alt="">
+        
+            <img class="texture-goopy-phase2-dust" src="../Textures/Goopy/Phase 2/Dust/B/lg_slime_dust_b_0001.png" alt="">
+            <img class="texture-goopy-phase2-dust" src="../Textures/Goopy/Phase 2/Dust/B/lg_slime_dust_b_0002.png" alt="">
+            <img class="texture-goopy-phase2-dust" src="../Textures/Goopy/Phase 2/Dust/B/lg_slime_dust_b_0003.png" alt="">
+            <img class="texture-goopy-phase2-dust" src="../Textures/Goopy/Phase 2/Dust/B/lg_slime_dust_b_0004.png" alt="">
+            <img class="texture-goopy-phase2-dust" src="../Textures/Goopy/Phase 2/Dust/B/lg_slime_dust_b_0005.png" alt="">
+            <img class="texture-goopy-phase2-dust" src="../Textures/Goopy/Phase 2/Dust/B/lg_slime_dust_b_0006.png" alt="">
+            <img class="texture-goopy-phase2-dust" src="../Textures/Goopy/Phase 2/Dust/B/lg_slime_dust_b_0007.png" alt="">
+            <img class="texture-goopy-phase2-dust" src="../Textures/Goopy/Phase 2/Dust/B/lg_slime_dust_b_0008.png" alt="">
+            <img class="texture-goopy-phase2-dust" src="../Textures/Goopy/Phase 2/Dust/B/lg_slime_dust_b_0009.png" alt="">
+            <img class="texture-goopy-phase2-dust" src="../Textures/Goopy/Phase 2/Dust/B/lg_slime_dust_b_0010.png" alt="">
+        
+            <img class="texture-goopy-phase1-dust" src="../Textures/Goopy/Phase 2/Dust/A/lg_slime_dust_a_0003.png" alt="">
+            <img class="texture-goopy-phase1-dust" src="../Textures/Goopy/Phase 2/Dust/A/lg_slime_dust_a_0006.png" alt="">
+            <img class="texture-goopy-phase1-dust" src="../Textures/Goopy/Phase 2/Dust/A/lg_slime_dust_a_0008.png" alt="">
+            <img class="texture-goopy-phase1-dust" src="../Textures/Goopy/Phase 2/Dust/A/lg_slime_dust_a_0010.png" alt="">
+            <img class="texture-goopy-phase1-dust" src="../Textures/Goopy/Phase 2/Dust/A/lg_slime_dust_a_0011.png" alt="">
+            <img class="texture-goopy-phase1-dust" src="../Textures/Goopy/Phase 2/Dust/A/lg_slime_dust_a_0012.png" alt="">
+            <img class="texture-goopy-phase1-dust" src="../Textures/Goopy/Phase 2/Dust/A/lg_slime_dust_a_0013.png" alt="">
+            <img class="texture-goopy-phase1-dust" src="../Textures/Goopy/Phase 2/Dust/A/lg_slime_dust_a_0015.png" alt="">
+
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0001.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0002.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0003.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0004.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0005.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0006.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0007.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0008.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0009.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0010.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0011.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0012.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0013.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0014.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0015.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0016.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0017.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0018.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0019.png" alt="">
+            <img class="texture-goopy-phase2-dizzy" src="../Textures/Goopy/Phase 2/Death/lg_slime_death_0020.png" alt="">
+        
+            <img class="texture-goopy-phase2-explode" src="../Textures/Goopy/Phase 2/Death/Slime/lg_slime_explode_0001.png" alt="">
+            <img class="texture-goopy-phase2-explode" src="../Textures/Goopy/Phase 2/Death/Slime/lg_slime_explode_0002.png" alt="">
+            <img class="texture-goopy-phase2-explode" src="../Textures/Goopy/Phase 2/Death/Slime/lg_slime_explode_0003.png" alt="">
+            <img class="texture-goopy-phase2-explode" src="../Textures/Goopy/Phase 2/Death/Slime/lg_slime_explode_0004.png" alt="">
+            <img class="texture-goopy-phase2-explode" src="../Textures/Goopy/Phase 2/Death/Slime/lg_slime_explode_0005.png" alt="">
+            <img class="texture-goopy-phase2-explode" src="../Textures/Goopy/Phase 2/Death/Slime/lg_slime_explode_0006.png" alt="">
+            <img class="texture-goopy-phase2-explode" src="../Textures/Goopy/Phase 2/Death/Slime/lg_slime_explode_0007.png" alt="">
+            <img class="texture-goopy-phase2-explode" src="../Textures/Goopy/Phase 2/Death/Slime/lg_slime_explode_0008.png" alt="">
+            <img class="texture-goopy-phase2-explode" src="../Textures/Goopy/Phase 2/Death/Slime/lg_slime_explode_0009.png" alt="">
+            <img class="texture-goopy-phase2-explode" src="../Textures/Goopy/Phase 2/Death/Slime/lg_slime_explode_0010.png" alt="">
+            <img class="texture-goopy-phase2-explode" src="../Textures/Goopy/Phase 2/Death/Slime/lg_slime_explode_0011.png" alt="">
+            <img class="texture-goopy-phase2-explode" src="../Textures/Goopy/Phase 2/Death/Slime/lg_slime_explode_0012.png" alt="">
+            <img class="texture-goopy-phase2-explode" src="../Textures/Goopy/Phase 2/Death/Slime/lg_slime_explode_0013.png" alt="">
+            <img class="texture-goopy-phase2-explode" src="../Textures/Goopy/Phase 2/Death/Slime/lg_slime_explode_0014.png" alt="">
+            <img class="texture-goopy-phase2-explode" src="../Textures/Goopy/Phase 2/Death/Slime/lg_slime_explode_0015.png" alt="">
+        </div>
+        <div class="phase-3">
+            <img class="texture-goopy-phase3-fall" src="../Textures/Goopy/Phase 3/Intro/slime_tomb_fall_0001.png" alt="">
+            
+            <img class="texture-goopy-phase3-slam" src="../Textures/Goopy/Phase 3/Intro/slime_tomb_slam_0001.png" alt="">
+            <img class="texture-goopy-phase3-slam" src="../Textures/Goopy/Phase 3/Intro/slime_tomb_slam_0002.png" alt="">
+            <img class="texture-goopy-phase3-slam" src="../Textures/Goopy/Phase 3/Intro/slime_tomb_slam_0003.png" alt="">
+
+            <img class="texture-goopy-phase3-trans" src="../Textures/Goopy/Phase 3/Intro/Transition/slime_tomb_trans_0001.png" alt="">
+            <img class="texture-goopy-phase3-trans" src="../Textures/Goopy/Phase 3/Intro/Transition/slime_tomb_trans_0002.png" alt="">
+            <img class="texture-goopy-phase3-trans" src="../Textures/Goopy/Phase 3/Intro/Transition/slime_tomb_trans_0003.png" alt="">
+            <img class="texture-goopy-phase3-trans" src="../Textures/Goopy/Phase 3/Intro/Transition/slime_tomb_trans_0004.png" alt="">
+        
+            <img class="texture-goopy-phase3-move-left" src="../Textures/Goopy/Phase 3/Move/Left/slime_tomb_lt_move_0001.png" alt="">
+            <img class="texture-goopy-phase3-move-left" src="../Textures/Goopy/Phase 3/Move/Left/slime_tomb_lt_move_0002.png" alt="">
+            <img class="texture-goopy-phase3-move-left" src="../Textures/Goopy/Phase 3/Move/Left/slime_tomb_lt_move_0003.png" alt="">
+            <img class="texture-goopy-phase3-move-left" src="../Textures/Goopy/Phase 3/Move/Left/slime_tomb_lt_move_0004.png" alt="">
+        
+            <img class="texture-goopy-phase3-trans-left" src="../Textures/Goopy/Phase 3/Move/Left/Trans/slime_tomb_lt_trans_0001.png" alt="">
+            <img class="texture-goopy-phase3-trans-left" src="../Textures/Goopy/Phase 3/Move/Left/Trans/slime_tomb_lt_trans_0002.png" alt="">
+            <img class="texture-goopy-phase3-trans-left" src="../Textures/Goopy/Phase 3/Move/Left/Trans/slime_tomb_lt_trans_0003.png" alt="">
+            
+            <img class="texture-goopy-phase3-move-right" src="../Textures/Goopy/Phase 3/Move/Right/slime_tomb_rt_move_0001.png" alt="">
+            <img class="texture-goopy-phase3-move-right" src="../Textures/Goopy/Phase 3/Move/Right/slime_tomb_rt_move_0002.png" alt="">
+            <img class="texture-goopy-phase3-move-right" src="../Textures/Goopy/Phase 3/Move/Right/slime_tomb_rt_move_0003.png" alt="">
+            <img class="texture-goopy-phase3-move-right" src="../Textures/Goopy/Phase 3/Move/Right/slime_tomb_rt_move_0004.png" alt="">
+        
+            <img class="texture-goopy-phase3-trans-right" src="../Textures/Goopy/Phase 3/Move/Right/Trans/slime_tomb_rt_trans_0001.png" alt="">
+            <img class="texture-goopy-phase3-trans-right" src="../Textures/Goopy/Phase 3/Move/Right/Trans/slime_tomb_rt_trans_0002.png" alt="">
+            <img class="texture-goopy-phase3-trans-right" src="../Textures/Goopy/Phase 3/Move/Right/Trans/slime_tomb_rt_trans_0003.png" alt="">
+
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0001.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0002.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0003.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0003.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0004.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0004.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0004.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0004.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0004.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0004.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0005.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0006.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0007.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0008.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0009.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0010.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0011.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0009b.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0008.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0008.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0007.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0007.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0012.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0012.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0013.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0013.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0014.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0014.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0014.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0014.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0014.png" alt="">
+            <img class="texture-goopy-phase3-attack" src="../Textures/Goopy/Phase 3/Smash/slime_tomb_smash_0014.png" alt="">
+       
+            <img class="texture-goopy-phase3-smash-dust" src="../Textures/Goopy/Phase 3/Smash/Dust/slime_tomb_smash_dust_0001.png" alt="">
+            <img class="texture-goopy-phase3-smash-dust" src="../Textures/Goopy/Phase 3/Smash/Dust/slime_tomb_smash_dust_0002.png" alt="">
+            <img class="texture-goopy-phase3-smash-dust" src="../Textures/Goopy/Phase 3/Smash/Dust/slime_tomb_smash_dust_0003.png" alt="">
+            <img class="texture-goopy-phase3-smash-dust" src="../Textures/Goopy/Phase 3/Smash/Dust/slime_tomb_smash_dust_0004.png" alt="">
+            <img class="texture-goopy-phase3-smash-dust" src="../Textures/Goopy/Phase 3/Smash/Dust/slime_tomb_smash_dust_0005.png" alt="">
+            <img class="texture-goopy-phase3-smash-dust" src="../Textures/Goopy/Phase 3/Smash/Dust/slime_tomb_smash_dust_0006.png" alt="">
+            <img class="texture-goopy-phase3-smash-dust" src="../Textures/Goopy/Phase 3/Smash/Dust/slime_tomb_smash_dust_0007.png" alt="">
+            <img class="texture-goopy-phase3-smash-dust" src="../Textures/Goopy/Phase 3/Smash/Dust/slime_tomb_smash_dust_0008.png" alt="">
+            <img class="texture-goopy-phase3-smash-dust" src="../Textures/Goopy/Phase 3/Smash/Dust/slime_tomb_smash_dust_0009.png" alt="">
+            <img class="texture-goopy-phase3-smash-dust" src="../Textures/Goopy/Phase 3/Smash/Dust/slime_tomb_smash_dust_0010.png" alt="">
+            <img class="texture-goopy-phase3-smash-dust" src="../Textures/Goopy/Phase 3/Smash/Dust/slime_tomb_smash_dust_0011.png" alt="">
+            <img class="texture-goopy-phase3-smash-dust" src="../Textures/Goopy/Phase 3/Smash/Dust/slime_tomb_smash_dust_0012.png" alt="">
+            <img class="texture-goopy-phase3-smash-dust" src="../Textures/Goopy/Phase 3/Smash/Dust/slime_tomb_smash_dust_0013.png" alt="">
+            <img class="texture-goopy-phase3-smash-dust" src="../Textures/Goopy/Phase 3/Smash/Dust/slime_tomb_smash_dust_0014.png" alt="">
+            <img class="texture-goopy-phase3-smash-dust" src="../Textures/Goopy/Phase 3/Smash/Dust/slime_tomb_smash_dust_0015.png" alt="">
+            <img class="texture-goopy-phase3-smash-dust" src="../Textures/Goopy/Phase 3/Smash/Dust/slime_tomb_smash_dust_0016.png" alt="">
+            <img class="texture-goopy-phase3-smash-dust" src="../Textures/Goopy/Phase 3/Smash/Dust/slime_tomb_smash_dust_0017.png" alt="">
+        
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0002.png" alt="">
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0003.png" alt="">
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0004.png" alt="">
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0005.png" alt="">
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0006.png" alt="">
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0007.png" alt="">
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0008.png" alt="">
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0009.png" alt="">
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0010.png" alt="">
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0011.png" alt="">
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0012.png" alt="">
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0013.png" alt="">
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0014.png" alt="">
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0015.png" alt="">
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0016.png" alt="">
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0017.png" alt="">
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0018.png" alt="">
+            <img class="texture-goopy-phase3-fall-dust" src="../Textures/Goopy/Phase 3/Dust(Intro)/slime_tomb_dust_0019.png" alt="">
+        
+            <img class="texture-goopy-phase3-death" src="../Textures/Goopy/Phase 3/Death/slime_tomb_death_0001.png" alt="">
+            <img class="texture-goopy-phase3-death" src="../Textures/Goopy/Phase 3/Death/slime_tomb_death_0002.png" alt="">
+            <img class="texture-goopy-phase3-death" src="../Textures/Goopy/Phase 3/Death/slime_tomb_death_0003.png" alt="">
+            <img class="texture-goopy-phase3-death" src="../Textures/Goopy/Phase 3/Death/slime_tomb_death_0004.png" alt="">
+            <img class="texture-goopy-phase3-death" src="../Textures/Goopy/Phase 3/Death/slime_tomb_death_0005.png" alt="">
+            <img class="texture-goopy-phase3-death" src="../Textures/Goopy/Phase 3/Death/slime_tomb_death_0006.png" alt="">
+            <img class="texture-goopy-phase3-death" src="../Textures/Goopy/Phase 3/Death/slime_tomb_death_0005.png" alt="">
+            <img class="texture-goopy-phase3-death" src="../Textures/Goopy/Phase 3/Death/slime_tomb_death_0004.png" alt="">
+            <img class="texture-goopy-phase3-death" src="../Textures/Goopy/Phase 3/Death/slime_tomb_death_0003.png" alt="">
+            <img class="texture-goopy-phase3-death" src="../Textures/Goopy/Phase 3/Death/slime_tomb_death_0002.png" alt="">
+
+            <img class="texture-goopy-phase3-move-left-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Left/slime_tomb_groundfx_0001.png" alt="">
+            <img class="texture-goopy-phase3-move-left-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Left/slime_tomb_groundfx_0002.png" alt="">
+            <img class="texture-goopy-phase3-move-left-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Left/slime_tomb_groundfx_0003.png" alt="">
+            <img class="texture-goopy-phase3-move-left-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Left/slime_tomb_groundfx_0004.png" alt="">
+
+            <img class="texture-goopy-phase3-move-left-trans-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Left/Intro/slime_tomb_groundfx_intro_0001.png" alt="">
+            <img class="texture-goopy-phase3-move-left-trans-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Left/Intro/slime_tomb_groundfx_intro_0002.png" alt="">
+            <img class="texture-goopy-phase3-move-left-trans-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Left/Intro/slime_tomb_groundfx_intro_0003.png" alt="">
+            <img class="texture-goopy-phase3-move-left-trans-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Left/Intro/slime_tomb_groundfx_intro_0004.png" alt="">
+            <img class="texture-goopy-phase3-move-left-trans-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Left/Intro/slime_tomb_groundfx_intro_0005.png" alt="">
+            <img class="texture-goopy-phase3-move-left-trans-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Left/Intro/slime_tomb_groundfx_intro_0006.png" alt="">
+
+            <img class="texture-goopy-phase3-move-right-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Right/slime_tomb_groundfx_0001.png" alt="">
+            <img class="texture-goopy-phase3-move-right-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Right/slime_tomb_groundfx_0002.png" alt="">
+            <img class="texture-goopy-phase3-move-right-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Right/slime_tomb_groundfx_0003.png" alt="">
+            <img class="texture-goopy-phase3-move-right-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Right/slime_tomb_groundfx_0004.png" alt="">
+
+            <img class="texture-goopy-phase3-move-right-trans-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Right/Intro/slime_tomb_groundfx_intro_0001.png" alt="">
+            <img class="texture-goopy-phase3-move-right-trans-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Right/Intro/slime_tomb_groundfx_intro_0002.png" alt="">
+            <img class="texture-goopy-phase3-move-right-trans-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Right/Intro/slime_tomb_groundfx_intro_0003.png" alt="">
+            <img class="texture-goopy-phase3-move-right-trans-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Right/Intro/slime_tomb_groundfx_intro_0004.png" alt="">
+            <img class="texture-goopy-phase3-move-right-trans-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Right/Intro/slime_tomb_groundfx_intro_0005.png" alt="">
+            <img class="texture-goopy-phase3-move-right-trans-dust" src="../Textures/Goopy/Phase 3/Move/GroundFX/Dust/Right/Intro/slime_tomb_groundfx_intro_0006.png" alt="">
+        </div>
+    </div>
+    <div class="assets screenfx">
+        <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0000.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0001.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0002.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0003.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0004.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0005.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0006.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0007.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0008.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0009.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0010.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0011.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0012.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0013.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0014.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0015.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0016.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0017.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0018.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0019.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0020.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0021.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0022.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0023.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0024.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0025.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0026.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0027.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0028.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0029.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0030.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0031.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0032.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0033.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0034.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0035.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0036.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0037.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0038.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0039.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0040.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0041.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0042.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0043.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0044.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0045.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0046.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0047.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0048.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0049.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0050.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0051.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0052.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0053.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0054.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0055.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0056.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0057.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0058.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0059.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0060.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0061.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0062.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0063.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0064.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0065.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0066.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0067.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0068.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0069.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0070.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0071.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0072.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0073.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0074.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0075.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0076.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0077.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0078.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0079.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0080.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0081.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0082.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0083.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0084.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0085.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0086.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0087.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0088.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0089.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0090.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0091.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0092.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0093.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0094.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0095.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0096.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0097.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0098.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0099.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0100.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0101.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0102.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0103.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0104.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0105.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0106.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0107.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0108.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0109.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0110.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0111.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0112.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0113.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0114.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0115.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0116.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0117.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0118.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0119.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0120.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0121.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0122.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0123.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0124.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0125.png" alt="">
+            <img class="texture-screen-fx" src="../Textures/Screen FX/cuphead_screen_fx_0126.png" alt="">
+    </div>
+    <div class="assets miscs">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0001.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0002.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0003.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0004.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0005.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0006.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0007.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0008.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0009.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0010.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0011.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0012.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0013.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0014.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0015.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0016.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+        <img class="texture-misc-iris" src="../Textures/Screen Narratives/Iris/iris_0017.png" alt="">
+
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0002.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0003.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0004.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0005.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0006.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0007.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0008.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0009.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0010.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0011.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0012.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0013.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0014.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0015.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0016.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0017.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0018.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0019.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0020.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0021.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0022.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0023.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0024.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0025.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0026.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0027.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0028.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0029.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0030.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0031.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0032.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0033.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0034.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0035.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0036.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0037.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0038.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0039.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0040.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0041.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0042.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0043.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0044.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0045.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0046.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0047.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0048.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0049.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0050.png" alt="">
+        <img class="texture-misc-getready" src="../Textures/Screen Narratives/Ready, WALLOP!/FightText_GetReady_0051.png" alt="">
+    
+        <img class="texture-misc-youdied" src="../Textures/Screen Narratives/You Died/You Died.png" alt="">
+
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0000.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0001.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0002.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0003.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0004.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0005.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0006.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0007.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0008.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0009.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0010.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0011.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0012.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0013.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0014.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0015.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0016.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0017.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0018.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0019.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0020.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0021.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0022.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0023.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0024.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0025.png" alt="">
+        <img class="texture-misc-knockout" src="../Textures/Screen Narratives/A KNOCKOUT/FightText_KO_0026.png" alt="">
+    </div>
+    <div class="assets audio">
+        <div class="miscs">
+            <audio id="sound-bg-music" src="../Sounds/Music/Ruse Of An Ooze.mp3"></audio>
+            <audio id="sound-optical-loop" src="../Sounds/Misc/OpticalLoop.wav"></audio>
+            
+            <audio class="sound-misc-knockout-bell" src="../Sounds/Misc/knockout_bell.wav"></audio>
+
+            <audio class="sound-misc-knockout-boom" src="../Sounds/Misc/knockout_boom_01.wav"></audio>
+
+            <audio class="sound-misc-intro-bell" src="../Sounds/Misc/bell_intro.wav"></audio>
+        </div>
+        <div class="announcer">
+            <audio class="sound-announcer-pre" src="../Sounds/Announcer/announcer_0001_a.wav"></audio>
+            <audio class="sound-announcer-pre" src="../Sounds/Announcer/announcer_0001_b.wav"></audio>
+            <audio class="sound-announcer-pre" src="../Sounds/Announcer/announcer_0001_c.wav"></audio>
+            <audio class="sound-announcer-pre" src="../Sounds/Announcer/announcer_0001_d.wav"></audio>
+            <audio class="sound-announcer-pre" src="../Sounds/Announcer/announcer_0001_e.wav"></audio>
+
+            <audio class="sound-announcer-post" src="../Sounds/Announcer/announcer_0002_a.wav"></audio>
+            <audio class="sound-announcer-post" src="../Sounds/Announcer/announcer_0002_b.wav"></audio>
+            <audio class="sound-announcer-post" src="../Sounds/Announcer/announcer_0002_c.wav"></audio>
+            <audio class="sound-announcer-post" src="../Sounds/Announcer/announcer_0002_d.wav"></audio>
+            <audio class="sound-announcer-post" src="../Sounds/Announcer/announcer_0002_e.wav"></audio>
+
+            <audio class="sound-announcer-knockout" src="../Sounds/Announcer/announcer_knockout_0004.wav"></audio>
+        </div>
+        <div class="player">
+            <audio class="sound-player-shoot-loop" src="../Sounds/Player/player_default_fire_loop_01.wav"></audio>
+            <audio class="sound-player-shoot" src="../Sounds/Player/player_default_fire_start_01.wav"></audio>
+            <audio class="sound-player-jump" src="../Sounds/Player/player_jump_01.wav"></audio>
+            <audio class="sound-player-hit" src="../Sounds/Player/player_hit_01.wav"></audio>
+            <audio class="sound-player-land" src="../Sounds/Player/player_land_ground_01.wav"></audio>
+            <audio class="sound-player-dash" src="../Sounds/Player/player_dash_01.wav"></audio>
+            <audio class="sound-player-death" src="../Sounds/Player/player_death_01.wav"></audio>
+            <audio class="sound-player-crack" src="../Sounds/Player/player_damage_crack_level3.wav"></audio>
+        </div>
+        <div class="goopy">
+            <div class="phase-1">
+                <audio class="sound-goopy-phase1-jump" src="../Sounds/Goopy/slime_small_jump_01.wav"></audio>
+                <audio class="sound-goopy-phase1-jump" src="../Sounds/Goopy/slime_small_jump_02.wav"></audio>
+                <audio class="sound-goopy-phase1-jump" src="../Sounds/Goopy/slime_small_jump_03.wav"></audio>
+                <audio class="sound-goopy-phase1-jump" src="../Sounds/Goopy/slime_small_jump_04.wav"></audio>
+
+                <audio class="sound-goopy-phase1-land" src="../Sounds/Goopy/slime_small_land_01.wav"></audio>
+                <audio class="sound-goopy-phase1-land" src="../Sounds/Goopy/slime_small_land_02.wav"></audio>
+                <audio class="sound-goopy-phase1-land" src="../Sounds/Goopy/slime_small_land_03.wav"></audio>
+                <audio class="sound-goopy-phase1-land" src="../Sounds/Goopy/slime_small_land_04.wav"></audio>
+                <audio class="sound-goopy-phase1-land" src="../Sounds/Goopy/slime_small_land_05.wav"></audio>
+
+                <audio class="sound-goopy-phase1-transform" src="../Sounds/Goopy/slime_small_transform.wav"></audio>
+            </div>
+            <div class="phase-2">
+                <audio class="sound-goopy-phase2-jump" src="../Sounds/Goopy/slime_big_jump_01.wav"></audio>
+                <audio class="sound-goopy-phase2-jump" src="../Sounds/Goopy/slime_big_jump_02.wav"></audio>
+                <audio class="sound-goopy-phase2-jump" src="../Sounds/Goopy/slime_big_jump_03.wav"></audio>
+                <audio class="sound-goopy-phase2-jump" src="../Sounds/Goopy/slime_big_jump_04.wav"></audio>
+                <audio class="sound-goopy-phase2-jump" src="../Sounds/Goopy/slime_big_jump_05.wav"></audio>
+
+                <audio class="sound-goopy-phase2-land" src="../Sounds/Goopy/slime_big_land_01.wav"></audio>
+                <audio class="sound-goopy-phase2-land" src="../Sounds/Goopy/slime_big_land_02.wav"></audio>
+                <audio class="sound-goopy-phase2-land" src="../Sounds/Goopy/slime_big_land_03.wav"></audio>
+                <audio class="sound-goopy-phase2-land" src="../Sounds/Goopy/slime_big_land_04.wav"></audio>
+                <audio class="sound-goopy-phase2-land" src="../Sounds/Goopy/slime_big_land_05.wav"></audio>
+                <audio class="sound-goopy-phase2-land" src="../Sounds/Goopy/slime_big_land_06.wav"></audio>
+
+                <audio class="sound-goopy-phase2-death" src="../Sounds/Goopy/slime_big_death_voice_01.wav"></audio>
+                <audio class="sound-goopy-phase2-death-fall" src="../Sounds/Goopy/slime_big_death_01.wav"></audio>
+            </div>
+            <div class="phase-3">
+                <audio class="sound-goopy-phase3-slide" src="../Sounds/Goopy/slime_tombstone_slide_01.wav"></audio>
+                <audio class="sound-goopy-phase3-slide" src="../Sounds/Goopy/slime_tombstone_slide_02.wav"></audio>
+                <audio class="sound-goopy-phase3-slide" src="../Sounds/Goopy/slime_tombstone_slide_03.wav"></audio>
+                <audio class="sound-goopy-phase3-slide" src="../Sounds/Goopy/slime_tombstone_slide_04.wav"></audio>
+                <audio class="sound-goopy-phase3-slide" src="../Sounds/Goopy/slime_tombstone_slide_05.wav"></audio>
+
+                <audio class="sound-goopy-phase3-smash" src="../Sounds/Goopy/slime_tombstone_splat_01.wav"></audio>
+                <audio class="sound-goopy-phase3-smash" src="../Sounds/Goopy/slime_tombstone_splat_02.wav"></audio>
+                <audio class="sound-goopy-phase3-smash" src="../Sounds/Goopy/slime_tombstone_splat_03.wav"></audio>
+                <audio class="sound-goopy-phase3-smash" src="../Sounds/Goopy/slime_tombstone_splat_04.wav"></audio>
+                <audio class="sound-goopy-phase3-smash" src="../Sounds/Goopy/slime_tombstone_splat_05.wav"></audio>
+
+                <audio class="sound-goopy-phase3-drop" src="../Sounds/Goopy/slime_tombstone_drop_onto_slime.wav"></audio>
+
+                <audio class="sound-goopy-phase3-death" src="../Sounds/goopy/slime_tombstone_death.wav"></audio>
+            </div>
+        </div>
+    </div>
+    <div id="game">
+        <div id="canv-container">
+            <div id="tutorial-container">
+                <div id="tutorial-card">
+                    <div id="title">
+                        <h1>TUTORIAL</h1>
+                    </div>
+                    <div id="instructions">
+                        Use <button>Z</button> to <b>Jump</b>.
+                        Use <button>X</button> to <b>Shoot</b>.
+                        Use <button>C</button> to <b>Lock</b> position and <button>ARROW</button> keys to <b>Aim</b>.
+                        Use <button>SHIFT</button> to <b>Evade</b> and <b>Dash</b>.
+                    </div>
+
+                </div>
+            </div>
+            <div id="info-bar">
+                <p>HEALTH</p>
+            </div>
+            <canvas id="canv"></canvas>
+        </div>
+        <div id="controls">
+            <button class="menu-button" id="play-button" onclick="playGame()">PLAY</button>
+            <button class="menu-button" id="pause-button" onclick="pauseGame()">PAUSE</button>
+            <button class="menu-button" id="tutor-button" onclick="toggleTutorialModal()">TUTORIAL</button>
+        </div>
+    </div>
+    <div class="texture-overlay" id="layer-1"></div>
+    <div class="texture-overlay" id="layer-2"></div>
+    <div class="texture-overlay" id="layer-3"></div>
+    <img class="background-stickers" id="cuphead" src="../Textures/Cuphoof.png" alt="">
+    <img class="background-stickers" id="mugman" src="../Textures/Mugman_results.png" alt="">
+</body>
+</html>
