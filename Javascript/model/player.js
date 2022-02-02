@@ -253,6 +253,7 @@ class Player extends GameObject {
     this.playerShootingSound[0][0].pause();
     this.isShooting = false;
     this.currentFireCooldown = 0;
+    this.changeShootingDir(this.S_STRAIGHT);
   }
 
   changeOrientation(or) {
@@ -511,7 +512,12 @@ class Player extends GameObject {
     let frames;
     let fr;
 
-    if (this.isTakingDamage()) {
+    if (this.hasDied) {
+      let dframes = this.isGrounded()
+        ? this.takeDamageFrames
+        : this.takeDamageAirFrames;
+      fr = dframes[0][dframes[1] - 1];
+    } else if (this.isTakingDamage()) {
       fr = this.takeDamageRender.shift();
     } else if (this.introFrames[0].length > 0) {
       fr = this.introFrames[0].shift();

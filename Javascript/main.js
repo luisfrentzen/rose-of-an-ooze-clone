@@ -91,10 +91,12 @@ function onKeyUp(e) {
     player.changeShootingDir(player.S_STRAIGHT);
   }
 
-  player.changeShootingDir(dir);
-
   let i = keyFired.indexOf(k);
-  keyFired.splice(i, 1);
+  if (i != -1) {
+    player.changeShootingDir(dir);
+
+    keyFired.splice(i, 1);
+  }
 }
 
 function onKeyDown(e) {
@@ -194,7 +196,6 @@ var hearts;
 
 function toggleTutorialModal() {
   let t = document.getElementById("tutorial-container");
-  console.log(t);
   t.style.display = t.style.display == "flex" ? "none" : "flex";
 }
 
@@ -339,6 +340,8 @@ function initialize() {
   fpsInterval = 1000 / fps;
   then = window.performance.now();
   startTime = then;
+  score = -2;
+  updateScore(score);
 
   isSoundPlaying = false;
   isFrozen = false;
@@ -468,10 +471,23 @@ function pauseGame() {
     pauseSounds();
   }
 
+  keyFired = [];
+  player.unShoot();
+  player.stopAll();
+  player.unDuck();
+
+  ST_DOWN = false;
+  ST_UP = false;
+  ST_LEFT = false;
+  ST_RIGHT = false;
+
   isPaused = !isPaused;
 }
 
 function playGame() {
+  let t = document.getElementById("tutorial-container");
+  t.style.display = t.style.display == "flex" ? "none" : "none";
+
   for (h of hearts) {
     h.style.display = "block";
   }
