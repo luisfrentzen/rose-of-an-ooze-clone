@@ -14,7 +14,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  background-color: #1e1c3f;
+  background-color: #000000;
   overflow: hidden;
 }
 
@@ -46,25 +46,6 @@ body {
   position: absolute;
   width: 100vw;
   height: 100vh;
-}
-
-#layer-1 {
-  z-index: 3;
-  background: transparent url("../Textures/Web/layer-1.png");
-  mix-blend-mode: overlay;
-}
-
-#layer-2 {
-  z-index: 2;
-  background: transparent url("../Textures/Web/layer-2.png");
-  mix-blend-mode: multiply;
-}
-
-#layer-3 {
-  z-index: 1;
-  background: transparent url("../Textures/Web/layer-3.png");
-  mix-blend-mode: overlay;
-  opacity: 0.5;
 }
 
 #game {
